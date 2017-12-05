@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<form>
+			请输入你的爱好:
+			<input type="checkbox" id="box">全中/全不中
+			<input type="checkbox" name="ball" value="zuqiu" />足球
+			<input type="checkbox" name="ball" value="lanqiu" />篮球
+			<input type="checkbox" name="ball" value="pingpangqiu" />乒乓球
+			<input type="checkbox" name="ball" value="yumaoqiu" />羽毛球
+			<br />
+			<input type="button" id="all" value="全选" />
+			<input type="button" id="allnot" value="全不选" />
+			<input type="button" id="fan" value="反选" />
+			<input type="button" id="sub" value="提交" />
+
+		</form>
+		<script>
+			var all = document.getElementById("all");
+			var ballList = document.getElementsByName("ball");
+			var box = document.getElementById("box");
+
+			//全选
+
+			all.onclick = function() {
+				for(var i = 0; i < ballList.length; i++) {
+					ballList[i].checked = true;
+
+				}
+				box.checked = true;
+			}
+			//全不选
+			allnot.onclick = function() {
+				for(var i = 0; i < ballList.length; i++) {
+					ballList[i].checked = !ballList[i].checked
+				}
+				box.checked = false;
+			}
+			// 反选
+			fan.onclick = function() {
+				for(var i = 0; i < ballList.length; i++) {
+
+					ballList[i].checked = !ballList[i].checked;
+
+					box.checked = !ballList[i].checked;
+					if(!ballList[i].checked) {
+						box.checked = false
+					}
+				}
+
+			}
+
+			/*
+			 
+			 * 
+			 * 设置每一个  爱好的点击
+			 * 
+			 * */
+			//			
+			//			for(var i = 0; i < ballList.length; i++) {
+			//
+			//
+			//				ballList[i].onclick = function() {
+			//                  checkAllBox.checked=true ;
+			//					for(var i = 0; i < ballList.length; i++) {
+			//
+			//
+			//						if(!ballList[i].checked) {
+			//
+			//
+			//							checkAllBox.checked = false;
+			//							
+			//							break;
+			//
+			//
+			//						}
+			//					}
+			//
+			//
+			//				}
+			//			}
+			//		
+			//
+		</script>
+	</body>
+
+</html>
